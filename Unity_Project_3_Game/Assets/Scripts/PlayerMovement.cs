@@ -13,15 +13,21 @@ public class PlayerMovement : MonoBehaviour
 
     private bool jumping;
 
+    SpriteRenderer sr;
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
+        animator.SetFloat("horizontal", horizontal);
 
         if (Input.GetKeyDown("space") && !jumping)
         {
