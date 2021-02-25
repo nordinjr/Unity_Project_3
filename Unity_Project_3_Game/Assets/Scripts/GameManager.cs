@@ -22,6 +22,11 @@ public class GameManager : MonoBehaviour
     private int targetPopcorn = -2;
     private int currentLevel = 0;
 
+    public GameObject dialogBox;
+    public GameObject dialogText;
+    public float typeSpeed = .05f;
+    private Coroutine dialogCO;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -114,5 +119,27 @@ public class GameManager : MonoBehaviour
         }
 
         StartCoroutine(ColorLerp(new Color(0, 0, 0, 0), 2));
+    }
+
+    public void StartDialog(string text)
+    {
+        dialogBox.SetActive(true);
+        dialogCO = StartCoroutine(TypeText(text));
+    }
+
+    public void HideDialog()
+    {
+        dialogBox.SetActive(false);
+        StopCoroutine(dialogCO);
+    }
+
+    IEnumerator TypeText(string text)
+    {
+        dialogText.GetComponent<TextMeshProUGUI>().text = "";
+        foreach (char c in text.ToCharArray())
+        {
+            dialogText.GetComponent<TextMeshProUGUI>().text += c;
+            yield return new WaitForSeconds(typeSpeed);
+        }
     }
 }
