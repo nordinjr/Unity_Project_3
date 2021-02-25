@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PopcornScript : MonoBehaviour
 {
+    
+    public AudioSource sound;
     // Start is called before the first frame update
     void Start()
     {
-        
+        sound = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,8 +29,8 @@ public class PopcornScript : MonoBehaviour
     {
         SpriteRenderer spr = gameObject.GetComponentInChildren<SpriteRenderer>();
         spr.enabled = false;
-        //sound.Play()
-        yield return new WaitForSeconds(2); //change 2 to sound.clip.length later
+        sound.Play();
+        yield return new WaitForSeconds(sound.clip.length);
         Destroy(gameObject);
     }
 }
