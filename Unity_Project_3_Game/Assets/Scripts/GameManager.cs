@@ -49,6 +49,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void IncPopcornCount()
+    {
+        popcornCount++;
+        popcornText.text = "Popcorn: " + popcornCount + "/" + targetPopcorn;
+        if (popcornCount == targetPopcorn) Debug.Log("Yay!");
+    }
+
     public void StartButton()
     {
         startButton.SetActive(false);
