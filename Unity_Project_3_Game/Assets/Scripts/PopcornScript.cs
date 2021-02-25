@@ -16,8 +16,19 @@ public class PopcornScript : MonoBehaviour
         
     }
 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.name);
+        GameManager.Instance.IncPopcornCount();
+        StartCoroutine("Grabbed");
+    }
+
+    IEnumerator Grabbed()
+    {
+        SpriteRenderer spr = gameObject.GetComponentInChildren<SpriteRenderer>();
+        spr.enabled = false;
+        //sound.Play()
+        yield return new WaitForSeconds(2); //change 2 to sound.clip.length later
+        Destroy(gameObject);
     }
 }
