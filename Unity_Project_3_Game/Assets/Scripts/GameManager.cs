@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(LoadYourAsyncScene("Level3"));
             popcornCount = 0;
-            targetPopcorn = 5;
+            targetPopcorn = 7;
             UpdateCount();
             currentLevel++;
         }
