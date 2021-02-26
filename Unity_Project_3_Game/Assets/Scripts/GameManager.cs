@@ -82,6 +82,14 @@ public class GameManager : MonoBehaviour
             UpdateCount();
             currentLevel++;
         }
+        else if (currentLevel == 2)
+        {
+            StartCoroutine(LoadYourAsyncScene("Level3"));
+            popcornCount = 0;
+            targetPopcorn = 5;
+            UpdateCount();
+            currentLevel++;
+        }
     }
 
     private void UpdateCount()

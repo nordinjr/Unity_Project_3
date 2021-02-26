@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     SpriteRenderer sr;
     Animator animator;
+    public AudioSource audio;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -32,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown("space") && !jumping)
         {
+            audio.Play();
             body.AddForce(new Vector2(0, jumpForce));
             jumping = true; 
         }
