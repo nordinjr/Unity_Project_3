@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D body;
-    private float horizontal;
+    public float horizontal;
 
     public float runSpeed = 5f;
     public bool lookingright = true;
@@ -27,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
-        animator.SetFloat("horizontal", horizontal);
+        animator.SetFloat("horizontal", Math.Abs(horizontal));
 
         if (Input.GetKeyDown("space") && !jumping)
         {
