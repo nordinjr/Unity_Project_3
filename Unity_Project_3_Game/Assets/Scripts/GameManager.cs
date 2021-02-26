@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI menuText;
     public TextMeshProUGUI popcornText;
+    public TextMeshProUGUI creditsText;
 
     private int popcornCount = -1;
     private int targetPopcorn = -2;
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
     {
         menuText.text = "AstrocorN";
         popcornText.text = "";
+        creditsText.enabled = false;
     }
 
     // Update is called once per frame
@@ -82,6 +84,7 @@ public class GameManager : MonoBehaviour
             UpdateCount();
             currentLevel++;
         }
+
         else if (currentLevel == 2)
         {
             StartCoroutine(LoadYourAsyncScene("Level3"));
@@ -100,6 +103,14 @@ public class GameManager : MonoBehaviour
     public void StartButton()
     {
         ChangeLevel();
+    }
+
+    private void rollCredits()
+    {
+        StartCoroutine(ColorLerp(new Color(0, 0, 0, 1), 1));
+        menuText.text = "You Win!";
+        popcornText.text = "";
+        creditsText.enabled = true;
     }
 
     IEnumerator ColorLerp(Color endvalue, float duration)
