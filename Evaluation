@@ -20,6 +20,8 @@ Jake:
   jumping mechanics with platform mechanics.
   
   Innocent:
+         I helped creating a world using tile maps. In addition, I added a background image and implemented parallax feature.
+         with the help of the team, integrated the parallax code demo from class into our project and customized it to fit into deferent levels of our game. 
   
   Levi:
     Designed level 2, handled sprite animation, created triggers and particle system for popcorn. Sourced assets
