@@ -1,0 +1,24 @@
+The intent of our game is to be a simple, but enjoyable 2D platformer that is not too difficult. 
+Our Narrative is that humans have colonized the moon. While up there, the tradition to watch a space 
+themed movie each week became a staple for the Earthers now on the moon. One sole astronaut must go 
+through each level collecting popcorn for all the people watching the movie! In order to make this game
+work, we used a cave themed platformer tileset along with a simple astronaut sprite sheet. This 
+allowed us to create a simple animation for when the astronaut is moving. We also created lovely pop and 
+bouncy sounds for collecting popcorn and jumping around. You can jump up through platforms, but you wont fall 
+back through them! We went for more of a 8-bit pixelated aesthetic for our game and it all came together 
+very nicely, if you believe people live up there and now there’s some little patches of grass in some places. 
+
+Some of the struggles we faced on this project, was getting the parallax to work correctly. It was being 
+quite stubborn and didn’t want to work properly. Also, surprising to us, we found it difficult to find a good 
+tileset to use. Moon themed isn’t crazy popular in the free art world. We had fun created our own levels for 
+the player to experience. This allowed us to give our own little touch to the game!
+
+Each Member Contribution
+Jake: 
+	I created the movement of our player and made sure the camera followed correctly enough to provide enough 
+  space in front for the player to see where to go next. I created the sign and dialog system, along with the 
+  jumping mechanics with platform mechanics.
+  
+  Innocent:
+  
+  Levi:
